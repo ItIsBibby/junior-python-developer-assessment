@@ -1,6 +1,6 @@
 # Junior Python Developer Assessment
 
-A Python-based assessment project that demonstrates data processing, database management, and web application development skills.
+This repository contains my submission for the Junior Python Developer technical assessment. The project demonstrates a full data lifecycle: initialising a relational database, serving data via a REST API, and performing an ETL process for reporting.
 
 ## Project Overview
 
@@ -12,21 +12,21 @@ This project implements a complete data pipeline with the following components:
 
 ## Features
 
-✓ SQLite database with customers and orders tables  
-✓ ETL pipeline that exports active customer orders to CSV  
-✓ Flask web application with multiple endpoints  
-✓ Data transformation and aggregation  
-✓ CSV export functionality  
+- SQLite database with customers and orders tables  
+- ETL pipeline that exports active customer orders to CSV  
+- Flask web application with multiple endpoints  
+- Data transformation and aggregation  
+- CSV export functionality  
 
 ## Project Structure
 
 ```
 junior-python-developer-assessment/
 ├── app.py                  # Flask web application
-├── database_setup.py       # Database initialization and seeding
-├── etl_script.py          # ETL process for data extraction and transformation
-├── requirements.txt       # Python package dependencies
-└── README.md             # This file
+├── database_setup.py       # Database initialisation and seeding
+├── etl_script.py           # ETL process for data extraction and transformation
+├── requirements.txt        # Python package dependencies
+└── README.md               # This file
 ```
 
 ## Installation
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Initialize the Database
+### Initialise the Database
 
 Run the database setup script to create tables and populate with sample data:
 
@@ -106,10 +106,16 @@ See `requirements.txt` for the complete list of dependencies.
 ## Key Components
 
 ### database_setup.py
-Initializes the SQLite database with:
+Initialises the SQLite database with:
 - Schema creation for customers and orders
 - Sample data generation using Faker library
-- Indexes for query optimization
+- Indexes for query optimisation
+
+### app.py
+Flask web application providing:
+- Multiple REST endpoints
+- Database connectivity
+- Request/response handling
 
 ### etl_script.py
 ETL pipeline that:
@@ -118,12 +124,6 @@ ETL pipeline that:
 - Filters for active customers
 - Transforms data (name concatenation, total calculations)
 - Exports to CSV format
-
-### app.py
-Flask web application providing:
-- Multiple REST endpoints
-- Database connectivity
-- Request/response handling
 
 ## Output
 
@@ -143,12 +143,12 @@ The CSV includes the following columns:
 
 - Database file: `assessment.db` (created in project root)
 - Output directory: `output/` (created automatically if it doesn't exist)
-- All SQL queries use parameterized statements for security
+- All SQL queries use parameterised statements for security
 - Data processing uses pandas DataFrames for efficiency
 
 ## License
 
-This is an assessment project. Please refer to your organization's guidelines for usage and distribution.
+This is an assessment project. Please refer to your organisation's guidelines for usage and distribution.
 
 ## Author
 
