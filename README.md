@@ -122,6 +122,11 @@ Improvement: Switch to the standard Python logging library. This would allow the
 To solve the "it works on my machine" problem.
 Improvement: Create a Dockerfile. This would package the Python version, the libraries, and the code into a single "container" that runs exactly the same way on the reviewer's computer as it does on yours.
 
+**4. Database details**
+
+The test data being generated is arbitray, and doesn't reflect a real-world scenario.
+Improvement: Adding more fields that would be captured in a real-world scenario, such as "email address", "order date", "marketing opt-in", etc.
+
 ## Dependencies
 
 | Package | Version | Purpose |
