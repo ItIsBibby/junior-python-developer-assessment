@@ -68,6 +68,16 @@ This creates an `assessment.db` SQLite database with:
 - **customers** table: Customer information with status tracking
 - **orders** table: Order details linked to customers
 
+### Set up the API
+
+Launch the web application:
+
+```bash
+python app.py
+```
+
+The application will be available at `http://localhost:5000/customer/<id>`
+
 ### Run the ETL Process
 
 Execute the ETL script to extract active customers' orders and save to CSV:
@@ -81,15 +91,18 @@ This will:
 2. Transform the data (combine first/last names, calculate totals)
 3. Export results to `output/active_customers_orders.csv`
 
-### Start the Flask Application
+## Choices and Reasoning
+- SQLite: Chosen for its portability and zero-configuration requirement. It allows for testing without setting up a standalone database server.
+- Pandas: Used for the ETL task as it is the industry standard for data manipulation, and handles complex processing more efficiently than standard Python loops.
+- Faker: Used to quickly generate realistic sample data, ensuring the application is tested against varied inputs.
+- Flask: Selected as the web framework due to its lightweight and modular nature, which is ideal for a single-purpose microservice API.
 
-Launch the web application:
+## Application Flow
+**Data Generation**: database_setup.py wipes existing data and creates 50 unique customers with randomized orders.
 
-```bash
-python app.py
-```
+**API Retrieval**: app.py accepts a GET request, performs a parameterised SQL query (to prevent SQL injection), and aggregates customer and order data into a JSON response.
 
-The application will be available at `http://localhost:5000`
+**ETL Pipeline**: etl_script.py performs a SQL JOIN to extract data, applies logic to filter for "active" status, calculates total order values, and loads the result into a CSV file in the /output directory.
 
 ## Dependencies
 
@@ -143,12 +156,8 @@ The CSV includes the following columns:
 
 - Database file: `assessment.db` (created in project root)
 - Output directory: `output/` (created automatically if it doesn't exist)
-- All SQL queries use parameterised statements for security
+- All SQL queries use parameterised statements to ensure protection against SQL injection
 - Data processing uses pandas DataFrames for efficiency
-
-## License
-
-This is an assessment project. Please refer to your organisation's guidelines for usage and distribution.
 
 ## Author
 
