@@ -25,7 +25,7 @@ def initialise_database():
             customer_id INTEGER,
             product_name TEXT,
             quantity INTEGER,
-            unit_price REAL,
+            unit_price MONEY,
             FOREIGN KEY (customer_id) REFERENCES customers (id)
         )
     ''')
