@@ -122,6 +122,11 @@ Improvement: Switch to the standard Python logging library. This would allow the
 To solve the "it works on my machine" problem.
 Improvement: Create a Dockerfile. This would package the Python version, the libraries, and the code into a single "container" that runs exactly the same way on the reviewer's computer as it does on yours.
 
+**4. Customer status dependencies**
+
+The test data being generated is arbitray, and doesn't reflect a real-world scenario. Currently, only users who are "active" and have orders are included in the etl process.
+Improvement: Changing the way the user data is generated so that only customers with orders can be "Active".
+
 ## Dependencies
 
 | Package | Version | Purpose |
