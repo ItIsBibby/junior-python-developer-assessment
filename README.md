@@ -104,6 +104,21 @@ This will:
 
 **ETL Pipeline**: etl_script.py performs a SQL JOIN to extract data, applies logic to filter for "active" status, calculates total order values, and loads the result into a CSV file in the /output directory.
 
+## Future Improvements
+If this were a real-world project for the University, here is how it could be evolved:
+
+1. API Authentication
+Currently, anyone can access the customer data if they know the URL.
+Improvement: Implement API Keys or JWT (JSON Web Tokens) to ensure only authorised users or internal systems can query sensitive customer information.
+
+2. Logging vs. Printing
+Currently, the scripts use print() to show progress.
+Improvement: Switch to the standard Python logging library. This would allow the application to save errors to a .log file.
+
+3. Containerisation (Docker)
+To solve the "it works on my machine" problem.
+Improvement: Create a Dockerfile. This would package the Python version, the libraries, and the code into a single "container" that runs exactly the same way on the reviewer's computer as it does on yours.
+
 ## Dependencies
 
 | Package | Version | Purpose |
